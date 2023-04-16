@@ -364,7 +364,7 @@ void game::darkTheme()
 void game::sunbackgr()
 {
     LTexture image;
-	image.Load("res/image/rsz_xanh.png", 0.8);
+	image.Load("res/image/sunicon.png", 0.8);
 	image.Render(235, 315);
 	image.free();
 }
@@ -372,7 +372,7 @@ void game::moonbackgr()
 {
     LTexture image;
 	image.Load("res/image/moonicon.png", 1.2);
-	image.Render(225, 290);
+	image.Render(225, 293);
 	image.free();
 }
 bool game::changebackgr()

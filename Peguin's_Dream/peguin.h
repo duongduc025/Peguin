@@ -10,6 +10,8 @@ class peguin:LTexture
 public:
     bool init(bool isDark);
 
+    void animation();
+
     void render();
 
     void Free();
@@ -24,6 +26,7 @@ public:
     void update(short int pileWidth, short int pileHeight);
     short int angle, time, x0;
     short int ahead = 0;
+
     string saved_path = "";
     position pospeguin;
 };

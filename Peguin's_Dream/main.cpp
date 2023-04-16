@@ -1,4 +1,5 @@
 #include "game.h"
+#include "peguin.h"
 #include "lib.h"
 #include <time.h>
 #include <stdlib.h>
@@ -21,7 +22,9 @@ int main(int argc, char** argv)
     bool isSetting = 0;
     bool isSound = 1;
     bool skin = 0;
+    short int frame = 0;
     bool isDark = 0;
+    int id = 0;
 
     while(!g.isQuit())
     {
@@ -69,8 +72,15 @@ int main(int argc, char** argv)
                         isSetting = abs(1-isSetting);
                         g.userInput.Type = game::input::NONE;
                     }
-
                     g.pipe.init();
+                    id ++;
+                    cout << id;
+                    if(id % 100 == 0)
+                    {
+                        id = 0;
+                        skin = 1;
+                    }
+                    else skin = 0;
                     g.bird.init(skin);
                     g.bird.render();
                     g.renderMessage();
@@ -80,7 +90,7 @@ int main(int argc, char** argv)
                         g.sound.renderSound();
                         g.nextButton();
                         if (!skin) g.lightTheme();
-                         else g.darkTheme();
+                        else g.darkTheme();
 
                         if(!isDark) g.sunbackgr();
                         else g.moonbackgr();
@@ -105,7 +115,6 @@ int main(int argc, char** argv)
                     }
                     if (g.userInput.Type == game::input::PLAY)
                     {
-                        cout << "CHOI";
                         g.Restart();
                         isMenu = 1;
                         g.userInput.Type = game::input::NONE;
@@ -120,7 +129,7 @@ int main(int argc, char** argv)
         {
 
             g.takeInput();
-
+            cout << "chao";
             if (g.userInput.Type == game::input::PAUSE)
             {
                 isPause = abs(1 - isPause);
@@ -142,7 +151,6 @@ int main(int argc, char** argv)
 
             if (!isPause)
             {
-                cout << "Huy pause";
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
                 g.pipe.update();
                 g.land.update();
@@ -157,18 +165,18 @@ int main(int argc, char** argv)
                 g.renderBestScore();
                 g.replay();
                 g.sound.renderSound();
-                 if (g.userInput.Type == game::input::PLAY)
-                        {
-                            if (g.checkReplay())
-                            {
-                                isPause = 0;
-                            }
-                             if (g.sound.checkSound())
-                            {
-                                isSound = abs(1 - isSound);
-                            }
-                g.userInput.Type = game::input::NONE;
-                            }
+                if (g.userInput.Type == game::input::PLAY)
+                {
+                    if (g.checkReplay())
+                    {
+                        isPause = 0;
+                    }
+                    if (g.sound.checkSound())
+                    {
+                        isSound = abs(1 - isSound);
+                    }
+                    g.userInput.Type = game::input::NONE;
+                }
             }
             g.display();
         }

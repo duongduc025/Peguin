@@ -4,7 +4,8 @@
 
 bool peguin::init(bool isDark)
 {
-    string bird_path = "res/image/rsz_xanh.png";
+    string bird_path;
+    bird_path = "res/image/rsz_xanh.png";
     if (isDark) bird_path = "res/image/rsz_hong.png";
     if (saved_path == bird_path)
     {
@@ -36,6 +37,7 @@ void peguin::Free()
 void peguin::render()
 {
     Render(pospeguin.x, pospeguin.y, angle);
+
 }
 
 void peguin::fall()
@@ -50,7 +52,7 @@ void peguin::fall()
             pospeguin.y = x0 + time * time * 0.18 - 7.3 * time;
             time++;
         }
-        angle = 180; //nga xuong quay dau ngc lai
+        angle = 180;
     }
     else return;
 }
