@@ -12,7 +12,7 @@ public:
 
     void animation();
 
-    void render();
+    void render(int i);
 
     void Free();
 
@@ -27,6 +27,7 @@ public:
     short int angle, time, x0;
     short int ahead = 0;
 
-    string saved_path = "";
+
+    LTexture textures[4];
     position pospeguin;
 };

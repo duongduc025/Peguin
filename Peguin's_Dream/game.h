@@ -60,6 +60,7 @@ public:
 
     void renderScoreLarge();
 
+
     void renderBestScore();
 
     void renderMessage();
@@ -82,13 +83,15 @@ public:
 
     void renderPauseTab();
 
-    void lightTheme();
+    void renderSettingTab();
 
-    void darkTheme();
+    void lightskin();
+
+    void darkskin();
 
     void nextButton();
 
-    bool changeTheme();
+    bool changeskin();
 
     void renderGameOver();
 

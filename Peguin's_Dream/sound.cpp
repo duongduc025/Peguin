@@ -9,6 +9,7 @@ bool sound::init()
     string breath_path = "res/sound/sfx_breath.wav";
     string hit_path = "res/sound/sfx_bonk.wav";
     string sound_path = "res/image/sound.png";
+    string music_path = "res/sound/music.wav";
 
     bool success = true;
 
@@ -39,6 +40,13 @@ bool sound::init()
             success = false;
         }
 
+        music = Mix_LoadWAV( music_path.c_str() );
+        if (hit == NULL)
+        {
+            printf( "Failed to load chord! SDL_mixer Error: %s\n", Mix_GetError() );
+            success = false;
+        }
+
         if (!Load(sound_path))
         {
             return false;
@@ -59,6 +67,8 @@ void sound::Free()
     breath = NULL;
     Mix_FreeChunk(hit);
     hit = NULL;
+    Mix_FreeChunk(music);
+    music = NULL;
 
     Mix_Quit();
 }
@@ -76,6 +86,13 @@ void sound::playHit()
     if (isPlay)
     {
         Mix_PlayChannel(-1, hit, 0);
+    }
+}
+void sound::playmusic()
+{
+    if (isPlay)
+    {
+        Mix_PlayChannel(-1, music, 0);
     }
 }
 

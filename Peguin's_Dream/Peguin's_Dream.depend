@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1681659173 source:d:\codef\cp\peguin\peguin's_dream\game.cpp
+1681739796 source:d:\codef\cp\peguin\peguin's_dream\game.cpp
 	"game.h"
 	"lib.h"
 	<iostream>
 
-1681062714 d:\codef\cp\peguin\peguin's_dream\game.h
+1681739621 d:\codef\cp\peguin\peguin's_dream\game.h
 	"peguin.h"
 	"pipe.h"
 	"land.h"
@@ -18,7 +18,7 @@
 	<iostream>
 	<vector>
 
-1681126617 d:\codef\cp\peguin\peguin's_dream\lib.h
+1681740889 d:\codef\cp\peguin\peguin's_dream\lib.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -30,7 +30,7 @@
 	"lib.h"
 	<vector>
 
-1680506244 d:\codef\cp\peguin\peguin's_dream\sound.h
+1681973894 d:\codef\cp\peguin\peguin's_dream\sound.h
 	<SDL_mixer.h>
 	<string>
 	"lib.h"
@@ -45,7 +45,7 @@
 	"game.h"
 	<iostream>
 
-1681660409 source:d:\codef\cp\peguin\peguin's_dream\main.cpp
+1682072240 source:d:\codef\cp\peguin\peguin's_dream\main.cpp
 	"game.h"
 	"peguin.h"
 	"lib.h"
@@ -55,23 +55,24 @@
 	<SDL_image.h>
 	<SDL_ttf.h>
 
-1680506243 source:d:\codef\cp\peguin\peguin's_dream\pipe.cpp
+1681973105 source:d:\codef\cp\peguin\peguin's_dream\pipe.cpp
 	"pipe.h"
 	"stdio.h"
 
-1680548933 source:d:\codef\cp\peguin\peguin's_dream\sound.cpp
+1681973894 source:d:\codef\cp\peguin\peguin's_dream\sound.cpp
 	"sound.h"
 	<stdio.h>
 	<SDL_mixer.h>
 	<iostream>
 	<string>
 
-1681660256 source:d:\codef\cp\peguin\peguin's_dream\peguin.cpp
+1682072099 source:d:\codef\cp\peguin\peguin's_dream\peguin.cpp
 	"peguin.h"
+	"lib.h"
 	<stdio.h>
 	<iostream>
 
-1681660256 d:\codef\cp\peguin\peguin's_dream\peguin.h
+1682052890 d:\codef\cp\peguin\peguin's_dream\peguin.h
 	"lib.h"
 	"pipe.h"
 

@@ -127,45 +127,45 @@ void game::renderScoreSmall()
 		signed char number = s[i] - '0';
 		if (number == 1)
 		{
-			image.Load("res/number/large/1.png", 0.45);
+			image.Load("res/number/1.png", 0.45);
 		}
 		else if (number == 2)
 		{
-			image.Load("res/number/large/2.png", 0.45);
+			image.Load("res/number/2.png", 0.45);
 		}
 		else if (number == 3)
 		{
-			image.Load("res/number/large/3.png", 0.45);
+			image.Load("res/number/3.png", 0.45);
 		}
 		else if (number == 4)
 		{
-			image.Load("res/number/large/4.png", 0.45);
+			image.Load("res/number/4.png", 0.45);
 		}
 		else if (number == 5)
 		{
-			image.Load("res/number/large/5.png", 0.45);
+			image.Load("res/number/5.png", 0.45);
 		}
 		else if (number == 6)
 		{
-			image.Load("res/number/large/6.png", 0.45);
+			image.Load("res/number/6.png", 0.45);
 		}
 		else if (number == 7)
 		{
-			image.Load("res/number/large/7.png", 0.45);
+			image.Load("res/number/7.png", 0.45);
 		}
 		else if (number == 8)
 		{
-			image.Load("res/number/large/8.png", 0.45);
+			image.Load("res/number/8.png", 0.45);
 		}
 		else if (number == 9)
 		{
-			image.Load("res/number/large/9.png", 0.45);
+			image.Load("res/number/9.png", 0.45);
 		}
 		else
 		{
-			image.Load("res/number/large/0.png", 0.45);
+			image.Load("res/number/0.png", 0.45);
 		}
-		image.Render(260 - image.getWidth() * (len - i - 1) * 0.75 - 5 * (len - i - 1), 268);
+		image.Render(245 - image.getWidth() * (len - i - 1) * 0.75 - 5 * (len - i - 1), 262);
 	}
 	image.free();
 }
@@ -181,43 +181,43 @@ void game::renderScoreLarge()
 		signed char number = s[i] - '0';
 		if (number == 1)
 		{
-			image.Load("res/number/large/1.png", 1);
+			image.Load("res/number/1.png", 1);
 		}
 		else if (number == 2)
 		{
-			image.Load("res/number/large/2.png", 1);
+			image.Load("res/number/2.png", 1);
 		}
 		else if (number == 3)
 		{
-			image.Load("res/number/large/3.png", 1);
+			image.Load("res/number/3.png", 1);
 		}
 		else if (number == 4)
 		{
-			image.Load("res/number/large/4.png", 1);
+			image.Load("res/number/4.png", 1);
 		}
 		else if (number == 5)
 		{
-			image.Load("res/number/large/5.png", 1);
+			image.Load("res/number/5.png", 1);
 		}
 		else if (number == 6)
 		{
-			image.Load("res/number/large/6.png", 1);
+			image.Load("res/number/6.png", 1);
 		}
 		else if (number == 7)
 		{
-			image.Load("res/number/large/7.png", 1);
+			image.Load("res/number/7.png", 1);
 		}
 		else if (number == 8)
 		{
-			image.Load("res/number/large/8.png", 1);
+			image.Load("res/number/8.png", 1);
 		}
 		else if (number == 9)
 		{
-			image.Load("res/number/large/9.png", 1);
+			image.Load("res/number/9.png", 1);
 		}
 		else
 		{
-			image.Load("res/number/large/0.png", 1);
+			image.Load("res/number/0.png", 1);
 		}
 		image.Render((SCREEN_WIDTH - (image.getWidth() * len + (len - 1) * 10)) / 2 + (i + 30) * i, 100);
 	}
@@ -243,45 +243,45 @@ void game::renderBestScore()
 		signed char number = s[i] - '0';
 		if (number == 1)
 		{
-			image.Load("res/number/large/1.png", 0.45);
+			image.Load("res/number/1.png", 0.45);
 		}
 		else if (number == 2)
 		{
-			image.Load("res/number/large/2.png", 0.45);
+			image.Load("res/number/2.png", 0.45);
 		}
 		else if (number == 3)
 		{
-			image.Load("res/number/large/3.png", 0.45);
+			image.Load("res/number/3.png", 0.45);
 		}
 		else if (number == 4)
 		{
-			image.Load("res/number/large/4.png", 0.45);
+			image.Load("res/number/4.png", 0.45);
 		}
 		else if (number == 5)
 		{
-			image.Load("res/number/large/5.png", 0.45);
+			image.Load("res/number/5.png", 0.45);
 		}
 		else if (number == 6)
 		{
-			image.Load("res/number/large/6.png", 0.45);
+			image.Load("res/number/6.png", 0.45);
 		}
 		else if (number == 7)
 		{
-			image.Load("res/number/large/7.png", 0.45);
+			image.Load("res/number/7.png", 0.45);
 		}
 		else if (number == 8)
 		{
-			image.Load("res/number/large/8.png", 0.45);
+			image.Load("res/number/8.png", 0.45);
 		}
 		else if (number == 9)
 		{
-			image.Load("res/number/large/9.png", 0.45);
+			image.Load("res/number/9.png", 0.45);
 		}
 		else
 		{
-			image.Load("res/number/large/0.png", 0.45);
+			image.Load("res/number/0.png", 0.45);
 		}
-		image.Render(260 - image.getWidth()*(len-i-1)*0.75 - 5*(len - i - 1), 315);
+		image.Render(245 - image.getWidth()*(len-i-1)*0.75 - 5*(len - i - 1), 315);
 	}
 	image.free();
 
@@ -341,12 +341,19 @@ void game::pause()
 void game::renderPauseTab()
 {
 	LTexture image;
-	image.Load("res/image/pauseTab.png", 1);
-	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 230);
+	image.Load("res/image/pausetabice.png", 1);
+	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 225);
+	image.free();
+}
+void game::renderSettingTab()
+{
+	LTexture image;
+	image.Load("res/image/setting.png", 1);
+	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 225);
 	image.free();
 }
 
-void game::lightTheme()
+void game::lightskin()
 {
 	LTexture image;
 	image.Load("res/image/rsz_xanh.png", 0.8);
@@ -354,7 +361,7 @@ void game::lightTheme()
 	image.free();
 }
 
-void game::darkTheme()
+void game::darkskin()
 {
 	LTexture image;
 	image.Load("res/image/rsz_hong.png", 0.8);
@@ -397,7 +404,7 @@ void game::nextButton()
 	image.free();
 }
 
-bool game::changeTheme()
+bool game::changeskin()
 {
 	int x, y;
 	SDL_GetMouseState(&x, &y);
@@ -411,7 +418,7 @@ bool game::changeTheme()
 void game::renderGameOver()
 {
 	LTexture image;
-	image.Load("res/image/gameOver.png", 1);
+	image.Load("res/image/gameover.png", 1);
 	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 150);
 	image.free();
 }
@@ -420,17 +427,17 @@ void game::renderMedal()
 {
 	LTexture image;
 
-	if (score > 20 && score <= 50)
+	if (score >= 20 && score <= 50)
 	{
-		image.Load("res/medal/silver.png", 0.45);
+		image.Load("res/image/trophy/silver.png", 0.45);
 	}
 	else if (score > 50)
 	{
-		image.Load("res/medal/gold.png", 0.45);
+		image.Load("res/image/trophy/gold.png", 0.45);
 	}
 	else
 	{
-		image.Load("res/medal/honor.png", 0.45);
+		image.Load("res/image/trophy/cu.png", 0.45);
 	}
 	image.Render(82, 275);
 

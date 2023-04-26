@@ -1,50 +1,44 @@
 #include "peguin.h"
+#include "lib.h"
 #include <stdio.h>
 #include <iostream>
 
-bool peguin::init(bool isDark)
+bool peguin::init(bool skin)
 {
-    string bird_path;
-    bird_path = "res/image/rsz_xanh.png";
-    if (isDark) bird_path = "res/image/rsz_hong.png";
-    if (saved_path == bird_path)
-    {
+    string path = "xanh";
+    if(skin) path = "hong";
         pospeguin.getPos(100, SCREEN_HEIGHT / 2 - 10);
         ahead = 0;
         angle = 0;
-    }
-    if (isNULL() || saved_path != bird_path)
-    {
-        saved_path = bird_path;
-        if ( Load(bird_path.c_str() , 1) )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
 
+    if (isNULL())
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            string bird_path = "res/image/" + path + "/" + to_string(i + 1) + ".png";
+            if (!textures[i].Load(bird_path.c_str(), 0.8))
+                return false;
+        }
+        return true;
     }
     return false;
 }
-
 void peguin::Free()
 {
     free();
 }
 
-void peguin::render()
+void peguin::render(int i)
 {
-    Render(pospeguin.x, pospeguin.y, angle);
-
+    textures[i].Render(pospeguin.x, pospeguin.y, angle);
 }
 
 void peguin::fall()
 {
-    if (die && pospeguin.y < SCREEN_HEIGHT - LAND_HEIGHT - PEGUIN_HEIGHT -5)
+    if (die && pospeguin.y < SCREEN_HEIGHT - LAND_HEIGHT - PEGUIN_HEIGHT - 5)
     {
-        if (time == 0){
+        if (time == 0)
+        {
             x0 = pospeguin.y;
         }
         if (time >= 0)
@@ -76,9 +70,8 @@ void peguin::update(short int pipeWidth, short int pipeHeight)
             pospeguin.y = x0 + time * time * 0.18 - 7.3 * time;
             time++;
         }
-
-        if ( (pospeguin.x + getWidth() > posPipe[ahead].x + 5) && (pospeguin.x + 5 < posPipe[ahead].x + pipeWidth) &&
-             (pospeguin.y + 5 < posPipe[ahead].y + pipeHeight || pospeguin.y  + getHeight() > posPipe[ahead].y + pipeHeight + PIPE_SPACE + 5) )
+        if ( (pospeguin.x + PEGUIN_WIDTH -10 > posPipe[ahead].x +5) && (pospeguin.x + 5 < posPipe[ahead].x + pipeWidth) &&
+                (pospeguin.y + 5 < posPipe[ahead].y + pipeHeight || pospeguin.y  + PEGUIN_HEIGHT > posPipe[ahead].y + pipeHeight + PIPE_SPACE + 5) )
         {
             die = true;
         }

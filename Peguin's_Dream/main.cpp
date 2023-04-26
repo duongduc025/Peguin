@@ -24,7 +24,7 @@ int main(int argc, char** argv)
     bool skin = 0;
     short int frame = 0;
     bool isDark = 0;
-    int id = 0;
+    int idx = 0;
 
     while(!g.isQuit())
     {
@@ -34,9 +34,8 @@ int main(int argc, char** argv)
         {
             if (isMenu)
             {
-                cout << "hi";
                 g.sound.playHit();
-                g.bird.render();
+                g.bird.render(0);
 
             }
             g.userInput.Type = game::input::NONE;
@@ -57,7 +56,7 @@ int main(int argc, char** argv)
                 g.land.render();
                 if (isMenu)
                 {
-                    g.bird.render();
+                    g.bird.render(0);
                     g.bird.fall();
                     g.renderGameOver();
                     g.renderMedal();
@@ -73,24 +72,16 @@ int main(int argc, char** argv)
                         g.userInput.Type = game::input::NONE;
                     }
                     g.pipe.init();
-                    id ++;
-                    cout << id;
-                    if(id % 100 == 0)
-                    {
-                        id = 0;
-                        skin = 1;
-                    }
-                    else skin = 0;
                     g.bird.init(skin);
-                    g.bird.render();
+                    g.bird.render(0);
                     g.renderMessage();
                     if(isSetting)
                     {
-                        g.renderPauseTab();
+                        g.renderSettingTab();
                         g.sound.renderSound();
                         g.nextButton();
-                        if (!skin) g.lightTheme();
-                        else g.darkTheme();
+                        if (!skin) g.lightskin();
+                        else g.darkskin();
 
                         if(!isDark) g.sunbackgr();
                         else g.moonbackgr();
@@ -101,7 +92,7 @@ int main(int argc, char** argv)
                             {
                                 isSound = abs(1 - isSound);
                             }
-                            else if (g.changeTheme())
+                            else if (g.changeskin())
                             {
                                 skin = abs(1 - skin);
 
@@ -129,7 +120,6 @@ int main(int argc, char** argv)
         {
 
             g.takeInput();
-            cout << "chao";
             if (g.userInput.Type == game::input::PAUSE)
             {
                 isPause = abs(1 - isPause);
@@ -146,7 +136,18 @@ int main(int argc, char** argv)
             else g.renderBackgroundNight();
             g.pipe.render();
             g.land.render();
-            g.bird.render();
+            if(isPause == 0)
+            {
+            frame++;
+            if (frame == 20)
+            {
+                idx++;
+                if (idx == 3)
+                    idx = 0;
+                frame = 0;
+            }
+            }
+            g.bird.render(idx);
             g.renderScoreLarge();
 
             if (!isPause)
@@ -158,7 +159,6 @@ int main(int argc, char** argv)
             }
             else
             {
-                cout << "else";
                 g.resume();
                 g.renderPauseTab();
                 g.renderScoreSmall();
